@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formularz</title>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+  <h1>Obraz</h1>
+  <img src="/fota123.png" alt="Opis obrazu"style="width: 200px; height: 150px;">
+  <form action="/submit" method="post">
+    <label for="imie">Imie:</label>
+    <input type="text" name="imie" id="imie"  required>
+
+    <label for="wiek">Wiek:</label>
+    <input type="number" name="wiek" id="wiek" required>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required>
+
+    <button type="submit">Wyślij</button>
+  </form>
+</body>
+</html>

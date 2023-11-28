@@ -1,0 +1,11 @@
+/* styles.css */
+.error {
+  color: red;
+}
+
+.error-field {
+  border: 1px solid red;
+}
+body{
+  background-color: aqua;
+}
