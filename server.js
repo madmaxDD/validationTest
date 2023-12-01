@@ -19,12 +19,12 @@ app.get('/', (req, res) => {
 app.post('/submit', [
   check('imie').isLength({ min: 2 }).withMessage('Imię musi zawierać co najmniej 2 znaki.'),
   check('wiek').custom(value => {
-    if (isNaN(value) || value < 18) {
-      throw new Error('Musisz mieć co najmniej 18 lat.');
+    if (isNaN(value) || (value < 18 && value > 100)) {
+      throw new Error('Musisz mieć co najmniej 18 lat, ale też nie więcej niż 100 xd');
     }
     return true;
   }),
-  check('email').isEmail().withMessage('Niepoprawny adres email.'),
+  check('email').isEmail().withMessage('Niepoprawny format adresu email.'),
 ], (req, res) => {
   const { imie, wiek, email } = req.body;
 
