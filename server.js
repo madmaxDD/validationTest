@@ -30,16 +30,14 @@ app.post('/submit', [
 
   const errors = validationResult(req);
 
-  if (!errors.isEmpty()) {
-    return res.render('form', {
-      errors: errors.array(),
-      imie: req.body.imie,
-      wiek: req.body.wiek,
-      email: req.body.email,
-    });
+  if (errors.isEmpty()) {
+     return res.render('results', { imie, wiek, email }); 
   }
 
-  res.render('results', { imie, wiek, email });
+
+  return res.render('form', {
+    errors: errors.array()
+  });
 });
 
 app.listen(port, () => {
