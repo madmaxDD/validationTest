@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/submit', [
-  check('imie').isLength({ min: 2 }).withMessage('Imię musi zawierać co najmniej 2 znaki.'),
+  check('imie').isLength({ min: 2, max:20 }).withMessage('Imię musi zawierać co najmniej 2 znaki i nie więcej niż 20'),
   check('wiek').custom(value => {
     if (isNaN(value) || value < 18 || value >100) {
       throw new Error('Musisz mieć co najmniej 18 lat, ale też nie więcej niż 100 xd');
